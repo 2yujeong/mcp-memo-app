@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import '@uiw/react-md-editor/markdown-editor.css';
 
 :root {
   --background: #ffffff;
@@ -38,4 +39,254 @@ body {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* MDEditor 커스텀 스타일 */
+.w-md-editor {
+  background-color: #ffffff;
+}
+
+.w-md-editor.w-md-editor-focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* 마크다운 편집기 텍스트 색상을 완전한 블랙으로 설정 */
+.w-md-editor-text-pre,
+.w-md-editor-text-input,
+.w-md-editor-text,
+.w-md-editor textarea,
+.w-md-editor .w-md-editor-text-pre,
+.w-md-editor .w-md-editor-text-input,
+.w-md-editor .w-md-editor-text {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* 텍스트 영역 직접 타겟팅 */
+.w-md-editor textarea,
+.w-md-editor-text-input textarea,
+.w-md-editor-text-pre textarea {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* 모든 하위 텍스트 요소들 */
+.w-md-editor * {
+  color: inherit !important;
+}
+
+.w-md-editor-text-pre .token,
+.w-md-editor-text-input .token,
+.w-md-editor-text .token {
+  color: #000000 !important;
+}
+
+.w-md-editor-text-pre,
+.w-md-editor-text-input {
+  caret-color: #000000 !important;
+}
+
+/* 편집기 텍스트 기본 스타일 강화 */
+.w-md-editor .w-md-editor-text-pre .token.title,
+.w-md-editor .w-md-editor-text-input .token.title {
+  color: #000000 !important;
+  font-weight: bold;
+}
+
+.w-md-editor .w-md-editor-text-pre .token.bold,
+.w-md-editor .w-md-editor-text-input .token.bold {
+  color: #000000 !important;
+  font-weight: bold;
+}
+
+.w-md-editor .w-md-editor-text-pre .token.code,
+.w-md-editor .w-md-editor-text-input .token.code {
+  color: #dc2626 !important;
+  background-color: #f3f4f6 !important;
+}
+
+/* 추가적인 텍스트 색상 보장 */
+.w-md-editor .w-md-editor-text-pre *,
+.w-md-editor .w-md-editor-text-input *,
+.w-md-editor .w-md-editor-text * {
+  color: #000000 !important;
+}
+
+/* 텍스트 에어리어 더 구체적으로 타겟팅 */
+div[data-color-mode="light"] .w-md-editor-text-pre,
+div[data-color-mode="light"] .w-md-editor-text-input,
+div[data-color-mode="light"] .w-md-editor-text {
+  color: #000000 !important;
+}
+
+.w-md-editor-toolbar {
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.w-md-editor-toolbar ul li button {
+  color: #6b7280;
+}
+
+.w-md-editor-toolbar ul li button:hover {
+  color: #374151;
+  background-color: #e5e7eb;
+}
+
+/* 마크다운 프리뷰 스타일 */
+.wmde-markdown {
+  background-color: transparent !important;
+}
+
+.wmde-markdown h1,
+.wmde-markdown h2,
+.wmde-markdown h3,
+.wmde-markdown h4,
+.wmde-markdown h5,
+.wmde-markdown h6 {
+  color: #111827;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.wmde-markdown p {
+  color: #374151;
+  margin-bottom: 1em;
+}
+
+.wmde-markdown code {
+  background-color: #f3f4f6;
+  color: #dc2626;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.wmde-markdown pre {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.wmde-markdown blockquote {
+  border-left: 4px solid #e5e7eb;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: #6b7280;
+}
+
+/* React Markdown 스타일 */
+.markdown-content {
+  color: #374151;
+  line-height: 1.6;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  color: #111827;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+.markdown-content h1 {
+  font-size: 1.875rem;
+}
+
+.markdown-content h2 {
+  font-size: 1.5rem;
+}
+
+.markdown-content h3 {
+  font-size: 1.25rem;
+}
+
+.markdown-content p {
+  margin-bottom: 1em;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  margin-bottom: 1em;
+  padding-left: 1.5rem;
+}
+
+.markdown-content li {
+  margin-bottom: 0.25em;
+}
+
+.markdown-content code {
+  background-color: #f3f4f6;
+  color: #dc2626;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.markdown-content pre {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1em;
+}
+
+.markdown-content pre code {
+  background-color: transparent;
+  color: #374151;
+  padding: 0;
+}
+
+.markdown-content blockquote {
+  border-left: 4px solid #e5e7eb;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+
+.markdown-content th,
+.markdown-content td {
+  border: 1px solid #e5e7eb;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.markdown-content th {
+  background-color: #f9fafb;
+  font-weight: 600;
+}
+
+.markdown-content strong {
+  font-weight: 600;
+}
+
+.markdown-content em {
+  font-style: italic;
+}
+
+.markdown-content a {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.markdown-content a:hover {
+  color: #1d4ed8;
 }
