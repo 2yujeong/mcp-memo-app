@@ -42,3 +42,6 @@ next-env.d.ts
 
 # workshop materials (instructor only)
 WORKSHOP_SCENARIO.md
+
+# cursor IDE configuration (contains sensitive tokens)
+.cursor/
